@@ -1,0 +1,90 @@
+
+.custom-footer {
+    background-color: #e8f5e9; 
+    color: #2e7d32; 
+    padding: 40px 20px;
+    border-top: 2px solid #a5d6a7; 
+}
+
+
+.footer-logo-text {
+    font-weight: bold;
+    color: #1b5e20;
+    margin-top: 10px;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1b5e20; 
+}
+.footer-link {
+    color: #2e7d32; /* Dark green */
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+.footer-link:hover {
+    color: #66bb6a; /* Lighter green on hover */
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #2e7d32; /* Dark green */
+}
+.footer-contact a {
+    color: #1b5e20; /* Deep green for links */
+    text-decoration: none;
+}
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Social Media Section */
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.social-icon {
+    font-size: 1.5rem;
+    color: #2e7d32; /* Dark green for icons */
+    transition: transform 0.3s, color 0.3s;
+}
+.social-icon:hover {
+    color: #66bb6a; /* Lighter green on hover */
+    transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    background-color: #c8e6c9; /* Light green for bottom section */
+    margin-top: 20px;
+}
+.footer-bottom small {
+    color: #388e3c; /* Medium green text */
+}
+.contact-icon {
+    margin-right: 10px;  /* Space between icon and text */
+    color: #388e3c;      /* Icon color */
+    font-size: 1.2rem;   /* Icon size */
+    vertical-align: middle;  /* Align the icon vertically with the text */
+}
+
+
+.footer-contact a {
+    color: #388e3c; /* Color for the email link */
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+

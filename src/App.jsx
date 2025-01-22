@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./navbar/navbar.jsx"; // Import Navbar
+import Footer from "./Footer/footer.jsx"; // Import Navbar
 import Home from "./home/home.jsx"; // Import Home component
 import Scrap from "./scrap_rates/scrap.jsx"; // Import scrap component
 import Contact from "./contact/contact.jsx"; // Import contact component
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <div>
       <Navigation /> {/* Navigation is rendered here */}
+      
       <Routes>
         <Route path="/home" element={<Home />} /> {/* Route for Home */}
         <Route path="/scrap" element={<Scrap />} /> {/* Route for scrap */}
@@ -22,7 +24,7 @@ const App = () => {
         
 
       </Routes>
-      
+      < Footer /> {/* Navigation is rendered here */}
     </div>
   );
 };
