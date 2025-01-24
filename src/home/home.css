@@ -1,0 +1,77 @@
+/* Main container for the homepage */
+.homepage-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Shared styling for video and image containers */
+.custom-container {
+  position: relative;
+  width: 100%;
+  height: 700px; /* Set height to control video/image section size */
+  overflow: hidden;
+  margin-bottom: 20px; /* Add space between sections */
+}
+
+/* Styling for the first video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ensure the video fully covers the section */
+  object-fit: cover; /* Maintain aspect ratio */
+  z-index: -1; /* Keep video behind the content */
+  opacity: 0.6;
+}
+
+/* Styling for the second image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ensure the image fully covers the section */
+  object-fit: cover;
+  z-index: -1; /* Keep image behind the content */
+}
+
+.content-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 1; /* Ensure text is above video/image */
+  text-align: center;
+}
+
+.second-image .content-overlay {
+  color: yellow; /* Different color for the text */
+  font-size: 20px;
+}
+.styled-paragraph {
+  font-size: 30px; /* Adjust font size */
+  font-weight: bold;
+  color: lightgreen;
+  text-align: center;
+  letter-spacing: 2px; /* Optional for spacing */
+}
+
+.styled-paragraph .highlight {
+  background-color: #f0f93c; /* Green background for SCRAP */
+  color: white; /* White text for contrast */
+  padding: 5px 10px; /* Add padding for better appearance */
+  border-radius: 5px; /* Rounded corners */
+}
+.subtext {
+  font-size: 18px;
+  color: rgb(12, 3, 3);
+  text-align: center;
+  margin-top: 10px; 
+  font-weight: 400;
+  letter-spacing: 1px; 
+}
