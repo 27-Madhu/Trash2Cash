@@ -1,0 +1,38 @@
+
+h1{
+    text-align: center;
+    
+}
+.select {
+    border: 1px solid #ccc; /* Single border for the select box */
+    border-radius: 4px; /* Optional: Rounded corners */
+    padding: 5px 10px; /* Spacing for better look */
+    width: 30%; /* Make it responsive if needed */
+    margin-bottom: 20px;
+  }
+  
+  .plastic {
+    width: 100%; /* Set button width */
+    margin: 5px 0; /* Add spacing between buttons */
+    padding: 5px; /* Spacing inside the button */
+    color: rgb(5, 0, 0); /* Default text color */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Optional: Rounded corners */
+    cursor: pointer; /* Pointer cursor for better UX */
+    background-color: none;
+  }
+  
+  .plastic:hover {
+    background-color: #2e7d32; /* Hover color */
+    color: aliceblue;
+  }
+  
+  .d-flex {
+    display: flex;
+    gap: 20px; /* Spacing between child elements */
+  }
+  
+  .item {
+    margin-left: 20px; /* Adjust as needed */
+  }
+  
