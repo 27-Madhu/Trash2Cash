@@ -23,13 +23,13 @@ body, html, p {
 
 /* Video styles */
 .background-video {
-  object-fit: cover; /* Maintain aspect ratio */
-  z-index: -1; /* Keep video behind the content */
+  object-fit: cover;
+  z-index: -1; 
   opacity: 0.6; 
   width: 100%;
-  height: auto; /* Set height to auto to maintain aspect ratio */
+  height: auto; 
   position: relative;
-  top: -282px; /* Adjust as needed */
+  top: -282px;
 }
 
 
@@ -37,13 +37,13 @@ body, html, p {
 /* Overlay content */
 .content-overlay {
   position: absolute;
-  top: 40%; /* Adjusted to move text up */
+  top: 40%; 
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   font-size: 24px;
   font-weight: bold;
-  z-index: 1; /* Ensure text is above video/image */
+  z-index: 1; 
   text-align: center;
 }
 
