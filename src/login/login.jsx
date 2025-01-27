@@ -1,5 +1,6 @@
 import "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
+import "./login.css"; 
 
 const LoginPage = () => {
   const handleLogin = (event) => {
@@ -45,7 +46,7 @@ const LoginPage = () => {
               </div>
               <div className="text-center mt-2">
                 <span>Dont have an account? </span>
-                <a href="#register" className="text-decoration-none">
+                <a href="#register" className="text-decoration-none">  
                   Register
                 </a>
               </div>

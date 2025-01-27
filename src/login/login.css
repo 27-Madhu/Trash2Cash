@@ -1,0 +1,81 @@
+/* Center container */
+.d-flex.justify-content-center.align-items-center.vh-100 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Card styling */
+.card.shadow {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(27, 94, 32, 0.2); /* #1b5e20 in rgba format */
+    background: linear-gradient(to right, #c8e6c9, #c8e6c9); /* Green gradient background */
+}
+
+/* Login title styling */
+.card h3 {
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Input field with icons in right corner */
+.d-flex.align-items-center {
+    position: relative;
+}
+
+.d-flex.align-items-center .form-control {
+    padding-right: 40px; /* Add space for the icon */
+    color: #1b5e20; /* Set text color inside the input fields */
+    border: 2px solid #1b5e20; /* Border color to match theme */
+    transition: all 0.3s ease;
+}
+
+/* Placeholder text color */
+.d-flex.align-items-center .form-control::placeholder {
+    color: #1b5e20; /* Set placeholder color to #1b5e20 */
+}
+
+/* Focus state for input fields */
+.d-flex.align-items-center .form-control:focus {
+    border-color: #27ae60; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.4); /* Add glow effect on focus */
+}
+
+/* Icon styling inside the input field */
+.d-flex.align-items-center .text-secondary {
+    position: absolute;
+    right: 10px; /* Position icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent interaction with the icon */
+}
+
+/* Button styling */
+button[type="submit"].w-100 {
+    background: linear-gradient(to right, #1b5e20, #27ae60);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"].w-100:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.4);
+}
+
+/* Links */
+.text-decoration-none {
+    color: #1b5e20;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.text-decoration-none:hover {
+    color: #27ae60;
+    text-decoration: underline;
+}
