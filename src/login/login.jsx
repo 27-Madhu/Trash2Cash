@@ -5,7 +5,6 @@ import "./login.css";
 const LoginPage = () => {
   const handleLogin = (event) => {
     event.preventDefault();
-    // Add your login logic here
     console.log("Login submitted");
   };
 
