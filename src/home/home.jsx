@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import './home.css'; // Ensure the correct path for the CSS file
 
 function HomePage() {
+  const [showText, setShowText] = useState(false);
+
+  const handleClick = () => {
+    setShowText(!showText);
+  };
+
   return (
     <div className="homepage-container">
       {/* First Video Section */}
@@ -11,27 +17,19 @@ function HomePage() {
         </video>
         <div className="content-overlay">
           <p className="styled-paragraph">
-            SELL YOUR <span className="highlight">JUNK</span> HERE!
+            SELL YOUR JUNK HERE!
             <p className="subtext">
               Newpaper-Plastic-Metal
-
             </p>
-            
           </p>
+          <button className="custom-button" onClick={handleClick}>
+           View Dettail
+          </button>
+          {showText && <p className="additional-text">Recycling turns trash into useful products, generates income, and reduces pollution!</p>}
         </div>
       </div>
 
-      {/* Second Image Section */}
-      <div className="custom-container second-image">
-        <img
-          className="background-image"
-          src="/src/all_image/background.jpg"
-          alt="Background"
-        />
-        <div className="content-overlay">
-          {/* Add more content here if needed */}
-        </div>
-      </div>
+    
     </div>
   );
 }
