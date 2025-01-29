@@ -1,6 +1,7 @@
 import "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
-import "./login.css"; 
+import "./login.css";
+import { FaEnvelope, FaLock } from "react-icons/fa";
 
 const LoginPage = () => {
   const handleLogin = (event) => {
@@ -18,20 +19,26 @@ const LoginPage = () => {
               <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
-                  <Form.Control 
-                    type="email" 
-                    placeholder="Enter email" 
-                    required 
-                  />
+                  <div className="form-group">
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter email"
+                      required
+                    />
+                    <FaEnvelope className="form-icon" />
+                  </div>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Password</Form.Label>
-                  <Form.Control 
-                    type="password" 
-                    placeholder="Enter password" 
-                    required 
-                  />
+                  <div className="form-group">
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter password"
+                      required
+                    />
+                    <FaLock className="form-icon" />
+                  </div>
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className="w-100">
@@ -44,8 +51,8 @@ const LoginPage = () => {
                 </a>
               </div>
               <div className="text-center mt-2">
-                <span>Dont have an account? </span>
-                <a href="#register" className="text-decoration-none">  
+                <span>Don't have an account? </span>
+                <a href="#register" className="text-decoration-none">
                   Register
                 </a>
               </div>
@@ -58,3 +65,6 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+
+
