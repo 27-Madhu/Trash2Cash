@@ -107,7 +107,7 @@
 }
 
 .text-column ul li::before {
-  content: '\2714'; /* Unicode for checkmark */
+  content: '\2714'; 
   color: #2e7d32;
   font-weight: bold;
   margin-right: 10px;
@@ -160,16 +160,6 @@
 .overlay-image:hover {
   transform: scale(1.1);
 }
-
-
-
-
-
-
-
-
-
-
 /* Card Section Styling */
 .card-section {
   margin-top: 50px;
