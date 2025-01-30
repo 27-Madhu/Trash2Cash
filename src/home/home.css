@@ -1,85 +1,57 @@
+/* HomePage Styling */
 .homepage-container {
   position: relative;
   width: 100%;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
-/* Shared styling for video and image containers */
+/* Video Section */
 .custom-container {
   position: relative;
   width: 100%;
-  height: auto; /* Set height to auto to maintain aspect ratio */
   overflow: hidden;
-  margin-bottom: -282px; /* Remove space between sections */
   padding: 0;
-  top: 0;
+  margin-bottom: -282px;
 }
 
-/* Reset global margins and padding */
-body, html, p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Video styles */
 .background-video {
   object-fit: cover;
-  z-index: -1; 
-  opacity: 0.6; 
   width: 100%;
-  height: auto; 
+  height: auto;
   position: relative;
   top: -282px;
+  opacity: 0.8;
+  z-index: -1;
 }
 
-
-
-/* Overlay content */
+/* Overlay Content */
 .content-overlay {
   position: absolute;
-  top: 40%; 
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 1; 
   text-align: center;
-}
-
-.second-image .content-overlay {
-  color: yellow; /* Different color for the text */
-  font-size: 20px;
+  color: white;
 }
 
 .styled-paragraph {
-  font-size: 30px; /* Adjust font size */
+  font-size: 40px;
   font-weight: bold;
   color: rgb(25, 225, 25);
-  text-align: center;
-  letter-spacing: 2px; /* Optional for spacing */
-}
-
-.styled-paragraph .highlight {
-  background-color: #f0f93c; /* Green background for SCRAP */
-  color: white; /* White text for contrast */
-  padding: 5px 10px; /* Add padding for better appearance */
-  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 15px;
 }
 
 .subtext {
-  font-size: 18px;
-  color: rgb(12, 3, 3);
-  text-align: center;
-  margin-top: 10px; 
-  font-weight: 400;
-  letter-spacing: 1px; 
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .custom-button {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -87,8 +59,195 @@ body, html, p {
   cursor: pointer;
 }
 
+.custom-button:hover {
+  background-color: #45a049;
+}
+
 .additional-text {
   margin-top: 20px;
   font-size: 18px;
-  color: black;
+  color: #080505;
+}
+/* Text and Image Section */
+.info-section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.text-column {
+  padding: 20px;
+  color: #333;
+  font-size: 18px;
+  text-align: justify;
+  max-width: 45%;
+}
+
+.text-column h1 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.text-column ul {
+  margin-top: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.text-column ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #444;
+}
+
+.text-column ul li::before {
+  content: '\2714'; /* Unicode for checkmark */
+  color: #2e7d32;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.image-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 65%;
+  padding-left: 10px;
+  height: 100%;
+  margin-left:20%; /* Align image to the right */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-image {
+  position: absolute;
+  width: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-image.one {
+  top: 10px;
+  left: 10px;
+}
+
+.overlay-image.two {
+  bottom: 10px;
+  right: 10px;
+}
+
+.overlay-image:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+/* Card Section Styling */
+.card-section {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: nowrap;
+  /* background: url('/src/all_image/b.webp') no-repeat center center;  */
+  /* background-size: cover;  */
+  padding: 20px;
+  border-radius: 15px; 
+}
+
+.custom-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #3a8742, #81C784);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: 300px;
+  flex: 1;
+  border-radius: 30px;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image inside Card */
+.card-img-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+/* Typography */
+.custom-card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text-column, .image-section {
+    max-width: 100%;
+  }
+  .card-section {
+    flex-wrap: wrap;
+  }
+  .custom-card {
+    flex: none;
+    width: 100%;
+  }
 }
