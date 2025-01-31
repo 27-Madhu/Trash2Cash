@@ -1,0 +1,107 @@
+/* Center container */
+.d-flex.justify-content-center.align-items-center.vh-100 {
+    width: 200vw;
+    height: 200vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    transform: translateY(-15%); /* Moves container slightly upwards */
+}
+
+/* Card styling */
+.card.shadow {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(27, 94, 32, 0.2); /* Green shadow */
+    background: linear-gradient(to right, #c8e6c9, #c8e6c9); /* Green gradient background */
+}
+
+/* Login title styling */
+.card h3 {
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+/* Form labels */
+.form-label {
+    font-weight: 500;
+    color: #1b5e20;
+}
+
+/* Input group with icons */
+.form-group {
+    position: relative;
+}
+
+.form-group .form-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1b5e20;
+    font-size: 1.2rem;
+}
+
+/* Input field styling */
+input[type="email"],
+input[type="password"] {
+    padding-left: 40px; /* Space for the icon */
+    padding-right: 40px; /* Space for the right-side icon */
+    color: #1b5e20; /* Text color */
+    border: 2px solid #1b5e20; /* Border color to match theme */
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder text */
+input::placeholder {
+    font-size: 0.9rem;
+    color: #1b5e20;
+}
+
+/* Focus state for input fields */
+input:focus {
+    border-color: #27ae60; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.4); /* Glow effect */
+    outline: none; /* Remove default outline */
+}
+
+/* Icon styling inside the input field (right corner) */
+.d-flex.align-items-center .text-secondary {
+    position: absolute;
+    right: 10px; /* Position icon to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent interaction with the icon */
+}
+
+/* Button styling */
+button[type="submit"].w-100 {
+    background: linear-gradient(to right, #1b5e20, #27ae60); /* Button gradient */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff; /* White text */
+    transition: all 0.3s ease;
+}
+
+button[type="submit"].w-100:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71); /* Lighter green gradient */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.4); /* Shadow effect */
+}
+
+/* Links styling */
+.text-decoration-none {
+    color: #1b5e20;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.text-decoration-none:hover {
+    color: #27ae60;
+    text-decoration: underline;
+}
+
