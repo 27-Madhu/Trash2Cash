@@ -80,7 +80,7 @@ export default class Scrap extends Component {
         <h1 className="text-center mb-4">Rates</h1>
         <div className='row'>
           <div className="col-12 col-md-3">
-            <Form.Select className='mb-3' aria-label="Select Location">
+          <Form.Select className='mb-3' aria-label="Select Location">
               <option>Patna</option>
               <option value="1">Siwan</option>
               <option value="2">Chhapra</option>

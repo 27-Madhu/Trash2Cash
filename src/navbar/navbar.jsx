@@ -18,7 +18,7 @@ class Navigation extends React.Component {
                 className="d-inline-block align-top"
                 style={{ marginLeft: "30px" }}
               />
-              <Nav.Link as={Link} to="/home" className="me-4" style={{ color: "green", fontWeight: "bold" }}>
+              <Nav.Link as={Link} to="/" className="me-4" style={{ color: "green", fontWeight: "bold" }}>
                 Trash2Cash
               </Nav.Link>
             </Navbar.Brand>

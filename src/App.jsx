@@ -16,7 +16,7 @@ const App = () => {
       <Navigation /> {/* Navigation is rendered here */}
       
       <Routes>
-        <Route path="/home" element={<Home />} /> {/* Route for Home */}
+        <Route path="/" element={<Home />} /> {/* Route for Home */}
         <Route path="/scrap" element={<Scrap />} /> {/* Route for scrap */}
         <Route path="/contact" element={<Contact />} /> {/* Route for scrap */}
         <Route path="/about" element={<About />} /> {/* Route for scrap */}
