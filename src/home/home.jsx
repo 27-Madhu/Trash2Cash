@@ -19,7 +19,7 @@ function HomePage() {
       {/* Video Section */}
       <div className="custom-container">
         <video className="background-video" autoPlay muted loop>
-          <source src="/video/video2.mp4" type="video/mp4" />
+          <source src="/src/video/video2.mp4" type="video/mp4" />
         </video>
         <div className="content-overlay">
           <p className="styled-paragraph">SELL YOUR JUNK HERE!</p>
@@ -34,6 +34,11 @@ function HomePage() {
           )}
         </div>
       </div>
+
+      {/* Navbar */}
+      <nav className="navbar">
+        {/* Navbar content here */}
+      </nav>
 
       {/* Text and Image Section */}
       <div className="info-section">
@@ -56,13 +61,13 @@ function HomePage() {
             <div className="image-section">
               <div className="image-container">
                 <img
-                  src="/src/all_image/people.jpg"
+                  src="/src/all_image/earth.jpg"
                   alt="Main Recycling Image"
                   className={`main-image ${hoveredImage === 'people' ? 'hovered' : ''}`}
                   onClick={() => handleImageHover('people')}
                 />
                 <img
-                  src="/src/all_image/city.jpg"
+                  src="/src/all_image/k.jpg"
                   alt="Overlay 1"
                   className={`overlay-image one ${hoveredImage === 'city' ? 'hovered' : ''}`}
                   onClick={() => handleImageHover('city')}

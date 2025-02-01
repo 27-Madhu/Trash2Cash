@@ -10,25 +10,28 @@
 .custom-container {
   position: relative;
   width: 100%;
+  height: 100vh; /* Full height of the viewport */
   overflow: hidden;
   padding: 0;
-  margin-bottom: -282px;
+  top:0;
+  
 }
 
 .background-video {
   object-fit: cover;
   width: 100%;
-  height: auto;
-  position: relative;
-  top: -282px;
-  opacity: 0.8;
+  height: 100%; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
   z-index: -1;
 }
 
 /* Overlay Content */
 .content-overlay {
   position: absolute;
-  top: 25%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -68,6 +71,7 @@
   font-size: 18px;
   color: #080505;
 }
+
 /* Text and Image Section */
 .info-section {
   padding: 50px 0;
@@ -150,16 +154,20 @@
 .overlay-image.one {
   top: 10px;
   left: 10px;
+  width: 30%;
 }
 
 .overlay-image.two {
   bottom: 10px;
   right: 10px;
+  width: 30%;
+  height: 25%;
 }
 
 .overlay-image:hover {
   transform: scale(1.1);
 }
+
 /* Card Section Styling */
 .card-section {
   margin-top: 50px;
@@ -167,8 +175,7 @@
   justify-content: center;
   gap: 60px;
   flex-wrap: nowrap;
-  /* background: url('/src/all_image/b.webp') no-repeat center center;  */
-  /* background-size: cover;  */
+  background-color: #4eb353;
   padding: 20px;
   border-radius: 15px; 
 }
@@ -179,7 +186,7 @@
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(135deg, #3a8742, #81C784);
+  background: linear-gradient(135deg, #9fe9a5, #cdedcd);
   color: white;
   text-align: center;
   padding: 20px;

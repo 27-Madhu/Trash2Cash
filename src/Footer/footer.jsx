@@ -26,8 +26,6 @@ function Footer() {
                         <NavLink href="#" className="footer-link text-success">Home</NavLink>
                          <NavLink href="#" className="footer-link text-success">Scrap Rates</NavLink>
                              <NavLink href="#" className="footer-link text-success">Services</NavLink>
-                       
-                        
                       </Nav>
                      </Col>
 
@@ -43,8 +41,7 @@ function Footer() {
                         </p>
                         <p className="footer-contact">
                         <FaMapMarkerAlt className="contact-icon" /> 
-                            Address:Bhavnager Highway,Rajkot <br/>Tramba,Gujarat 360020
-                          
+                            Address: Bhavnager Highway, Rajkot <br/> Tramba, Gujarat 360020
                         </p>
                     </Col>
                 </Row>
