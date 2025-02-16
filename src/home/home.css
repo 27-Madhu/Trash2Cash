@@ -1,78 +1,92 @@
-/* HomePage Styling */
+body {
+  font-family: 'Times New Roman', serif;
+}
 .homepage-container {
   position: relative;
   width: 100%;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+ 
 }
 
-/* Video Section */
 .custom-container {
   position: relative;
   width: 100%;
   height: 100vh; /* Full height of the viewport */
   overflow: hidden;
   padding: 0;
-  top:0;
-  
+  top:-234px;
 }
 
+/* Background Video Section */
 .background-video {
   object-fit: cover;
+  object-position: center bottom; 
   width: 100%;
-  height: 100%; 
+  height: 100vh; /* Ensure the video covers the entire container */
   position: absolute;
-  top: 0;
+   /* Ensure the video starts from the top */
   left: 0;
-  opacity: 0.4;
+  opacity: 0.8;
   z-index: -1;
 }
 
-/* Overlay Content */
+/* Content Overlay */
 .content-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  z-index: 2; /* Ensure it's above the overlay */
+  color: #fff;
+  font-size: 1.2rem;
 }
-
 .styled-paragraph {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: rgb(25, 225, 25);
-  margin-bottom: 15px;
+  color: green;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding-top:80px;
 }
-
 .subtext {
-  font-size: 20px;
-  color: white;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: orange;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-
 .custom-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 18px;
+  font-size: 1.2rem;
+  padding: 0.8rem 1.5rem;
   background-color: #4CAF50;
-  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .custom-button:hover {
   background-color: #45a049;
+  transform: scale(1.05);
+}
+@media screen and (max-width: 768px) {
+  .content-overlay {
+    font-size: 1rem;
+  }
+  .styled-paragraph {
+    font-size: 2rem;
+  }
+  .subtext {
+    font-size: 1.2rem;
+  }
+  .custom-button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
-.additional-text {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #080505;
-}
-
-/* Text and Image Section */
+/* Info Section */
 .info-section {
   padding: 50px 0;
   background-color: #f9f9f9;
@@ -80,6 +94,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: -234px; /* Adjust the margin to align with the video */
 }
 
 .text-column {
@@ -93,7 +108,7 @@
 .text-column h1 {
   font-size: 28px;
   color: #2e7d32;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .text-column ul {
@@ -112,11 +127,12 @@
 
 .text-column ul li::before {
   content: '\2714'; 
-  color: #2e7d32;
+  color: #0b6e10;
   font-weight: bold;
   margin-right: 10px;
 }
 
+/* Image Section */
 .image-section {
   display: flex;
   justify-content: flex-end;
@@ -124,7 +140,7 @@
   max-width: 65%;
   padding-left: 10px;
   height: 100%;
-  margin-left:20%; /* Align image to the right */
+  margin-left: 20%; /* Align image to the right */
 }
 
 .image-container {
@@ -135,16 +151,16 @@
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
 .main-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: cover; /* This ensures the image maintains its aspect ratio */
 }
 
 .overlay-image {
   position: absolute;
-  width: 120px;
+  width: 30%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -154,14 +170,11 @@
 .overlay-image.one {
   top: 10px;
   left: 10px;
-  width: 30%;
 }
 
 .overlay-image.two {
   bottom: 10px;
   right: 10px;
-  width: 30%;
-  height: 25%;
 }
 
 .overlay-image:hover {
@@ -174,25 +187,25 @@
   display: flex;
   justify-content: center;
   gap: 60px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   background-color: #4eb353;
   padding: 20px;
-  border-radius: 15px; 
+  border-radius: 15px;
 }
 
+/* Custom Card Styling */
 .custom-card {
   border: none;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background: linear-gradient(135deg, #9fe9a5, #cdedcd);
+  background: linear-gradient(135deg, #c9efcc, #cdedcd);
   color: white;
   text-align: center;
   padding: 20px;
   max-width: 300px;
   flex: 1;
-  border-radius: 30px;
 }
 
 .custom-card:hover {
@@ -200,10 +213,10 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Image inside Card */
-.card-img-container {
-  width: 80px;
-  height: 80px;
+/* Video Container */
+.card-video-container {
+  width: 100px;
+  height: 100px;
   margin: 0 auto;
   background: #fff;
   border-radius: 50%;
@@ -211,19 +224,23 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-.card-img {
-  width: 50%;
-  height: 50%;
-  object-fit: contain;
+/* Video Styling */
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* Typography */
 .custom-card .card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  color: #333;
 }
 
 .custom-card .card-text {
@@ -233,18 +250,122 @@
 
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
-  .info-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  .text-column, .image-section {
-    max-width: 100%;
-  }
   .card-section {
     flex-wrap: wrap;
   }
+  
   .custom-card {
     flex: none;
     width: 100%;
+    max-width: 90%;
   }
+
+  .card-video-container {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/* Testimonial Section */
+.testimonial-section {
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
+  justify-content: center;
+  padding: 50px 10%;
+  background-color: #fff;
+  gap: 20px; /* Add some spacing between image and text */
+}
+
+.testimonial-image img {
+  max-width: 90%; /* Reduce the image size */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for better visibility */
+}
+.testimonial-image img:hover {
+  transform: scale(1.1); /* Image ko zoom karega */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+.testimonial-content {
+  max-width: 55%; /* Allocate more space for the text */
+  padding-left: 20px; /* Reduce padding to bring image closer */
+}
+
+.testimonial-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px;
+  color: #076a15;
+}
+
+.testimonial-description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Process Section */
+.process-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-steps-left,
+.process-steps-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.process-card {
+  width: 220px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #076a15;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.process-card:hover {
+  transform: scale(1.05);
+}
+
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width:80vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+  z-index: 1; /* Ensure it's above the video but below content */
+}
+.know-more {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #1b810b;
+  text-decoration: none;
+}
+
+.know-more:hover {
+  text-decoration: underline;
 }

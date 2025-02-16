@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2E7D32; /* Deep green background */
+    color: white; /* White text */
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white; /* Darker green for header */
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin-top: 60px; /* Add top margin to avoid Navbar overlap */
+}
+
+.process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #9ec2b4; /* Light green background for sections */
+}
+
+.section-container {
+    display: flex;
+    flex-direction: row; /* Place text and image side by side */
+    align-items: center;
+    justify-content: center; /* Center content */
+    width: 90%;
+    max-width: 1200px;
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text */
+    padding: 10px 0; /* Reduce padding */
+    margin: 10px 0; /* Reduce margins */
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+}
+
+.section-container .text {
+    flex: 1; /* Text takes equal width */
+    padding: 0 5px; /* Reduce space between text and image */
+    text-align: left;
+}
+
+.section-container:nth-child(even) .text {
+    order: 2; /* Move text after image for even sections */
+    padding-right: 0;
+    padding-left: 5px; /* Reduce space between text and image */
+}
+
+.section-container .text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #FFD700; /* Yellow heading color */
+}
+
+.section-container .text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.section-container img {
+    flex: 1; /* Image takes equal width */
+    max-width: 45%; /* Limit image size and reduce space */
+    height: auto;
+    border-radius: 0; /* Remove border radius */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-container {
+        flex-direction: column; /* Stack text and image vertically on mobile */
+        text-align: center;
+    }
+
+    .section-container .text,
+    .section-container img {
+        max-width: 80%;
+        margin-bottom: 10px; /* Reduce margin on mobile */
+    }
+}
