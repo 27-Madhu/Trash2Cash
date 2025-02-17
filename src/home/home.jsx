@@ -136,7 +136,7 @@ function HomePage() {
       {/* Process Section */}
       <h1 className="head display-4 text-success text-center">Our Process</h1>
       <div className="process-section bg-green-500 p-8 rounded-2xl flex flex-wrap justify-between items-center gap-4">
-        {/* Left Process Steps */}
+       
         <div className="process-steps-left flex flex-col gap-6">
           <div className="process-card bg-green-300 text-white p-4 rounded-lg shadow-md">
             <p className="font-bold text-lg text-center">01. COLLECTION</p>
