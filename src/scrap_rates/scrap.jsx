@@ -5,6 +5,9 @@ import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
 import High from '../all_image/high-density.webp';
+import Carousel from 'react-bootstrap/Carousel';
+import ExampleCarouselImage from '../all_image/high-density.webp';
+
 import "./scrap.css";
 
 export default class Scrap extends Component {
@@ -61,11 +64,11 @@ export default class Scrap extends Component {
               <Card.Body>
                 <Card.Title>{card.title}</Card.Title>
                 {card.price && <Card.Text><strong style={{ color: '#2e7d32' }}>{card.price}</strong></Card.Text>}
-                <div className="d-flex">
-                <button className="btn  btn-success w-40" >Sell Your Items</button>  {/* Add to Cart button */}
-                <button className="btn ms-4  btn-danger w-40" >Add to Cart</button>  {/* Add to Cart button */}
+              
+                <button className="btn sell-btn btn-success w-40" >Sell Your Items</button>  {/* Add to Cart button */}
+               
 
-                </div>
+              
               </Card.Body>
             </Card>
           </div>
@@ -77,7 +80,7 @@ export default class Scrap extends Component {
   render() {
     return (
       <div className="container py-4">
-        <h1 className="text-center mb-4">Rates</h1>
+        <h1 className="text-center head mb-4">Rates</h1>
         <div className='row'>
           <div className="col-12 col-md-3">
           <Form.Select className='mb-3' aria-label="Select Location">
@@ -97,7 +100,51 @@ export default class Scrap extends Component {
             {this.renderCardContent()}
           </div>
         </div>
+
+        <div className="testomonial">
+          <p className='cust-say'>What Our Customers Say</p>
+          <Carousel slide={false}>
+            <Carousel.Item>
+              <Card className="text-center mx-auto" style={{ width: "90%", padding: "20px" }}>
+                <Card.Img variant="top" src={High} style={{ width: "100px", height: "60px", margin: "0 auto",borderRadius: "50%" }} />
+                <Card.Body>
+                  <Card.Title>First Slide</Card.Title>
+                  <Card.Text>
+                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <Card className="text-center mx-auto" style={{ width: "90%", padding: "20px" }}>
+                <Card.Img variant="top" src={bottleImage} style={{ width: "100px", height: "60px", margin: "0 auto",borderRadius: "50%" }} />
+                <Card.Body>
+                  <Card.Title>Second Slide</Card.Title>
+                  <Card.Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+
+            <Carousel.Item>
+              <Card className="text-center mx-auto" style={{ width: "90%", padding: "20px" }}>
+                <Card.Img variant="top" src={mixPlasticImage} style={{ width: "100px", height: "60px", margin: "0 auto",borderRadius: "50%" }} />
+                <Card.Body>
+                  <Card.Title>Third Slide</Card.Title>
+                  <Card.Text>
+                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+          </Carousel>
+
+
+        </div>
       </div>
+      
     );
   }
 }

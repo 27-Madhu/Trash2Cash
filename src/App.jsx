@@ -7,7 +7,7 @@ import Scrap from "./scrap_rates/scrap.jsx"; // Import scrap component
 import Contact from "./contact/contact.jsx"; // Import contact component
 import About from "./about/about.jsx"; // Import about component
 import Login from "./login/login.jsx"; // Import about component
-
+import Dettail from "./dettail/dettail.jsx";
 
 
 const App = () => {
@@ -21,6 +21,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} /> {/* Route for scrap */}
         <Route path="/about" element={<About />} /> {/* Route for scrap */}
         <Route path="/login" element={<Login />} /> {/* Route for scrap */}
+        <Route path="/detail" element={<Dettail />} />
         
 
       </Routes>

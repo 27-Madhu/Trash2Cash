@@ -1,5 +1,10 @@
+
+.container{
+  margin-top: 7%;
+}
 h1{
-  color: green !important;;
+  color: green !important;
+  
 }
 .value{
   background-color: green !important;
@@ -11,4 +16,42 @@ h1{
   font-size: 20px;
   text-align: center;
   font-weight: 450;
+}
+.plastic{
+  background-color: green;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+
+}
+.plastic:hover{
+  background-color: orange !important;
+  color: white;
+  
+}
+.sell-btn{
+  background-color: green;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+.sell-btn:hover{
+  background-color: orange !important;
+  color: white;
+  border: none !important;;
+}
+.d-block{
+  height: 300px !important;
+}
+.cust-say{
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%); /* Makes the default white icons black */
 }
