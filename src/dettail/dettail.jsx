@@ -22,6 +22,7 @@ const Dettail = () => {
     </>
   );
 };
+// process
 
 const processSteps = [
   {

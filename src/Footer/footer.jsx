@@ -16,6 +16,7 @@ function Footer() {
                                 width={90}
                                 height={90}
                             />
+                            {/* img */}
                             <h3 className={styles.footerLogoText}>Trash2Cash</h3>
                             <p>Your one-stop solution for waste recycling!</p>
                         </Stack>
