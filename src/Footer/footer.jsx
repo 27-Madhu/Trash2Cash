@@ -1,10 +1,10 @@
 import { Container, Row, Col, Stack, Image, Nav, NavLink } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import "./Footer.css"; 
+import styles from "./Footer.module.css"; 
 
 function Footer() {
     return (
-        <footer className="custom-footer">
+        <footer className={styles.customFooter}>
             <Container fluid>
                 <Row>
                     <Col md={4} className="mx-5 d-flex align-items-center">
@@ -16,49 +16,48 @@ function Footer() {
                                 width={90}
                                 height={90}
                             />
-                            <h3 className="footer-logo-text">Trash2Cash</h3>
+                            <h3 className={styles.footerLogoText}>Trash2Cash</h3>
                             <p>Your one-stop solution for waste recycling!</p>
                         </Stack>
                     </Col>
                     <Col md={3}>
-                      <Nav className="flex-column footer-nav">
-                         <h5 className="footer-heading">Useful Links</h5>
-                        <NavLink href="#" className="footer-link text-success">Home</NavLink>
-                         <NavLink href="#" className="footer-link text-success">Scrap Rates</NavLink>
-                             <NavLink href="#" className="footer-link text-success">Services</NavLink>
-                      </Nav>
-                     </Col>
-
+                        <Nav className={`flex-column ${styles.footerNav}`}>
+                            <h5 className={styles.footerHeading}>Useful Links</h5>
+                            <NavLink href="#" className={`${styles.footerLink} text-success`}>Home</NavLink>
+                            <NavLink href="#" className={`${styles.footerLink} text-success`}>Scrap Rates</NavLink>
+                            <NavLink href="#" className={`${styles.footerLink} text-success`}>Services</NavLink>
+                        </Nav>
+                    </Col>
                     <Col md={3}>
-                        <h5 className="footer-heading">Contact Us!</h5>
-                        <p className="footer-contact">
-                        <FaEnvelope className="contact-icon" /> 
+                        <h5 className={styles.footerHeading}>Contact Us!</h5>
+                        <p className={styles.footerContact}>
+                            <FaEnvelope className={styles.contactIcon} /> 
                             Email: <a href="mailto:trash2cash@gmail.com">trash2cash@gmail.com</a>
                         </p>
-                        <p className="footer-contact">
-                        <FaPhone className="contact-icon" /> 
+                        <p className={styles.footerContact}>
+                            <FaPhone className={styles.contactIcon} /> 
                             Phone: +91 (900) 678-3210
                         </p>
-                        <p className="footer-contact">
-                        <FaMapMarkerAlt className="contact-icon" /> 
+                        <p className={styles.footerContact}>
+                            <FaMapMarkerAlt className={styles.contactIcon} /> 
                             Address: Bhavnager Highway, Rajkot <br/> Tramba, Gujarat 360020
                         </p>
                     </Col>
                 </Row>
-                <Row className="footer-bottom">
+                <Row className={styles.footerBottom}>
                     <Col className="text-center py-3">
                         <small>© 2025 Trash2Cash. All rights reserved.</small>
-                        <div className="social-icons-container">
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                        <div className={styles.socialIconsContainer}>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <FaInstagram />
                             </a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <FaFacebook />
                             </a>
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <FaTwitter />
                             </a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                                 <FaLinkedin />
                             </a>
                         </div>

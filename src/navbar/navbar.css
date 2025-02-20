@@ -1,4 +1,8 @@
 
 .lng{
     margin-left: 20px;
-}
+   
+        position: relative; /* Necessary for z-index to work */
+        z-index: 1; /* Navbar ko video ke upar dikhane ke liye */
+    }
+    

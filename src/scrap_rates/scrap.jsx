@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
-import High from '../all_image/high-density.webp';
+// import High from '../all_image/high-density.webp';
 import "./scrap.css";
 
 export default class Scrap extends Component {
@@ -48,7 +48,7 @@ export default class Scrap extends Component {
         cards = [
           { title: 'Plastic Bottle', image: bottleImage, price: '₹ 10 /kg' },
           { title: 'Mix Plastic', image: mixPlasticImage, price: '₹ 12 /kg' },
-          { title: 'High-density Pool', image: High, price: '₹ 10 /kg' }
+          // { title: 'High-density Pool', image: High, price: '₹ 10 /kg' }
         ];
     }
 
