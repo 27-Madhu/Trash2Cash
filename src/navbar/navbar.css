@@ -19,6 +19,15 @@
     transition: all 0.3s ease-in-out;
 }
 
+<<<<<<< HEAD
+.lng{
+    margin-left: 20px;
+   
+        position: relative; /* Necessary for z-index to work */
+        z-index: 1; /* Navbar ko video ke upar dikhane ke liye */
+    }
+    
+=======
 /* Hover effect for all nav links */
 .navbar-nav .nav-link:hover {
     color: orange !important;
@@ -42,3 +51,4 @@
     background-color: orange;
     color: white;
 }
+>>>>>>> bb57447919f1418304f6f6521e2261052f2f92cf

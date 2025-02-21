@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
-import High from '../all_image/high-density.webp';
+import High from '../all_image/mix plastic.jpg';
 import Carousel from 'react-bootstrap/Carousel';
 
 

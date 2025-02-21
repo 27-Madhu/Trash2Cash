@@ -1,27 +1,28 @@
 import React from 'react';
-import './dettail.css';
+import styles from './dettail.module.css';
 
 const Dettail = () => {
   return (
     <>
-      <header>
+      <header className={styles.header}style={{ marginTop: '8%' }}>
         <h3>Waste Processed</h3>
       </header>
 
-      <section className="process">
+      <section className={styles.process}>
         {processSteps.map((step, index) => (
-          <div key={index} className="section-container">
-            <div className="text">
+          <div key={index} className={styles.sectionContainer}>
+            <div className={styles.text}>
               <h2>{step.title}</h2>
               <p>{step.description}</p>
             </div>
-            <img src={step.image} alt={step.title} />
+            <img src={step.image} alt={step.title} className={styles.image} />
           </div>
         ))}
       </section>
     </>
   );
 };
+// process
 
 const processSteps = [
   {
