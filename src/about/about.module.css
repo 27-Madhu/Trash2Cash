@@ -1,0 +1,221 @@
+/* General Styles */
+.body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaf7ea;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Top Banner */
+.topBanner {
+    width: 100%;
+    height: 400px;
+    background: url('/src/all_image/about.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bannerText h1 {
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.ctaBtn, .bn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #2a7c47;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.ctaBtn:hover, .bn:hover {
+    background-color: #1e5c35;
+    transform: scale(1.08);
+}
+
+/* About Section */
+.abContainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.aboutContent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.boxes {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 280px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.boxes:hover {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+}
+
+.boxes img {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+.boxes h3 {
+    color: #2a7c47;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.boxes p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Row Container */
+.rowContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.textContent {
+    flex: 1;
+    padding-right: 30px;
+    text-align: left;
+}
+
+.imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.landfillImg {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(31, 137, 46, 0.1);
+}
+
+/* Team Section */
+.teamSection {
+    padding: 50px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.teamSection h2 {
+    font-size: 32px;
+    color: #2a7c47;
+    margin-bottom: 20px;
+}
+
+.teamMembers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.member {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.member h3 {
+    font-size: 20px;
+    color: #2a7c47;
+}
+
+.member p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 50px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 32px;
+    color: #2a7c47;
+    margin-bottom: 20px;
+}
+
+.testimonialBox {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.testimonialBox p {
+    font-size: 16px;
+    color: #444;
+    font-style: italic;
+}
+
+.testimonialBox h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #2a7c47;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .aboutContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .boxes, .rowContainer {
+        width: 100%;
+    }
+
+    .rowContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .teamMembers {
+        flex-direction: column;
+        align-items: center;
+    }
+}
