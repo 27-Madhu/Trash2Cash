@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import { Link } from "react-router-dom";
 import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
 import High from '../all_image/high-density.webp'; // रिमोट से आयी लाइन को जोड़ा
 import Carousel from 'react-bootstrap/Carousel';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e8bbd42 (sellForm)
 import "./scrap.css";
 
 export default class Scrap extends Component {
@@ -58,11 +64,21 @@ export default class Scrap extends Component {
         {cards.map((card, index) => (
           <div key={index} className="col-12 col-sm-6 col-md-4">
             <Card className="h-100">
-              <Card.Img variant="top" src={card.image} alt={card.title} style={{ height: '150px' }} />
+              <Card.Img variant="top" src={card.image} alt={card.title} style={{ height: '150px',width:'100%'}} />
               <Card.Body>
                 <Card.Title>{card.title}</Card.Title>
                 {card.price && <Card.Text><strong style={{ color: '#2e7d32' }}>{card.price}</strong></Card.Text>}
+<<<<<<< HEAD
                 <button className="btn sell-btn btn-success w-40">Sell Your Items</button>
+=======
+              
+                <button className="btn sell-btn btn-success w-40">
+  <Link to="/sell" style={{ textDecoration: "none", color: "white" }}>
+    Sell Your Items
+  </Link>
+</button>
+              
+>>>>>>> e8bbd42 (sellForm)
               </Card.Body>
             </Card>
           </div>

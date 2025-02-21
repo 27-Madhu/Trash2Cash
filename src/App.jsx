@@ -8,6 +8,7 @@ import Contact from "./contact/contact.jsx"; // Import Contact component
 import About from "./about/about.jsx"; // Import About component
 import Login from "./login/login.jsx"; // Import Login component
 import Dettail from "./dettail/dettail.jsx"; // Import Detail component
+import SellForm from "./sellYourItem/SellForm.jsx"; // Import Sell Form component
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/about" element={<About />} /> {/* Route for About */}
         <Route path="/login" element={<Login />} /> {/* Route for Login */}
         <Route path="/detail" element={<Dettail />} /> {/* Route for Detail */}
+        <Route path="/sell" element={<SellForm />} /> {/* Route for Sell */}
       </Routes>
 
       <Footer /> {/* Footer is rendered here */}
