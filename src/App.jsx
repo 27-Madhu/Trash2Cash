@@ -8,6 +8,8 @@ import Contact from "./contact/contact.jsx"; // Import contact component
 import About from "./about/about.jsx"; // Import about component
 import Login from "./login/login.jsx"; // Import about component
 import Dettail from "./dettail/dettail.jsx";
+import SellForm from "./sellYourItem/SellForm.jsx";
+
 
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/about" element={<About />} /> {/* Route for scrap */}
         <Route path="/login" element={<Login />} /> {/* Route for scrap */}
         <Route path="/detail" element={<Dettail />} />
+        <Route path="/sell" element={<SellForm />} />
+       
         
 
       </Routes>
