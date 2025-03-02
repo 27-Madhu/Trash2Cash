@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
+<<<<<<< HEAD
 import High from '../all_image/high-density.webp'; // रिमोट से आयी लाइन को जोड़ा
+=======
+import High from '../all_image/mix plastic.jpg';
+ // रिमोट से आयी लाइन को जोड़ा
+>>>>>>> b8dfc01728c8d19e1b4aac47bc31204d8d9a3021
 import Carousel from 'react-bootstrap/Carousel';
 
 

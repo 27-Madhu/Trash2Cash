@@ -307,6 +307,32 @@ body {
   line-height: 1.6;
   text-align: justify;
 }
+@media screen and (max-width: 768px) {
+  .testimonial-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .testimonial-image img {
+    max-width: 70%;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-content {
+    max-width: 90%;
+    padding: 0;
+  }
+
+  .testimonial-title {
+    font-size: 28px;
+  }
+
+  .testimonial-description {
+    font-size: 16px;
+  }
+}
+
 
 /* Process Section */
 .process-section {
@@ -356,7 +382,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
-  z-index: 1; /* Ensure it's above the video but below content */
+  z-index: 1;
 }
 .know-more {
   display: inline-block;

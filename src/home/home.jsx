@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 import { Row, Col, Card, Button, Container } from 'react-bootstrap';
 import './home.css';
-
-
-
 function HomePage() {
   const [showText, setShowText] = useState(false);
 
@@ -14,13 +11,14 @@ function HomePage() {
   };
 
   return (
-    <div className="homepage-container">
+    <div className="homepage-container" style={{ marginTop: '6%' }}>
+
     {/* Video Section */}
     <div className="custom-container">
       <video className="background-video" autoPlay muted loop>
         <source src="/video/video2.mp4" type="video/mp4" />
       </video>
-      <div className="overlay"></div> {/* Overlay */}
+      <div className="overlay"></div>
       <div className="content-overlay">
         <p className="styled-paragraph padding-top:80px">SELL YOUR JUNK HERE!</p>
         <p className="subtext">Newspaper - Plastic - Metal</p>
@@ -100,6 +98,7 @@ function HomePage() {
         </div>
  <h1 className="Step text-center">3 Step to Sell your Trash</h1>
 {/* Card Section */}
+
 <div className="card-section">
   {[
     {
