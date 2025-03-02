@@ -2,7 +2,7 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import styles from './contact.module.css'; // Import CSS Module
-import contactImg from '../all_image/contact.png'; // Import your image
+import contactImg from '../all_image/contact.jpg'; // Import your image
 import {  FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 const Contact = () => {
   return (

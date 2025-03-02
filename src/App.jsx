@@ -9,6 +9,7 @@ import About from "./about/about.jsx"; // Import About component
 import Login from "./login/login.jsx"; // Import Login component
 import Dettail from "./dettail/dettail.jsx"; // Import Detail component
 
+
 const App = () => {
   return (
     <div>
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/about" element={<About />} /> {/* Route for About */}
         <Route path="/login" element={<Login />} /> {/* Route for Login */}
         <Route path="/detail" element={<Dettail />} /> {/* Route for Detail */}
+        
       </Routes>
 
       <Footer /> {/* Footer is rendered here */}

@@ -50,7 +50,7 @@ const Navigation = () => {
               <NavDropdown.Item as={Link} to="#action3">Waste Collection Services</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="#action4">Waste Categorization & Valuation</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="#action5">Second-Hand Market</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/secondhandmarket">Second-Hand Market</NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link as={Link} to="/contact" className="me-4">

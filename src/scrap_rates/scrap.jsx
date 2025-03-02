@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { FaRecycle, FaRegFileAlt, FaCog, FaGlassCheers } from 'react-icons/fa';
 import bottleImage from '../all_image/bottel.jpg';
 import mixPlasticImage from '../all_image/mix plastic.jpg';
-import High from '../all_image/high-density.webp'; // रिमोट से आयी लाइन को जोड़ा
+import High from '../all_image/mix plastic.jpg'; // रिमोट से आयी लाइन को जोड़ा
 import Carousel from 'react-bootstrap/Carousel';
 import "./scrap.css";
 
