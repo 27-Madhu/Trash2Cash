@@ -1,4 +1,5 @@
 import React from "react";
+import "./i18n";// for language change
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./navbar/navbar.jsx"; // Import Navbar
 import Footer from "./Footer/footer.jsx"; // Import Footer
@@ -9,7 +10,9 @@ import About from "./about/about.jsx"; // Import About component
 import Login from "./login/login.jsx"; // Import Login component
 import Dettail from "./dettail/dettail.jsx"; // Import Detail component
 import SellForm from "./sellYourItem/SellForm.jsx"; // Import Sell Form component
-
+import WasteCollection from './servies/waste-collation.jsx'; // Import'
+import Wastecategories from './servies/waste-categories.jsx';
+import UserCard from './User_profile/user.jsx';
 const App = () => {
   return (
     <div>
@@ -23,6 +26,9 @@ const App = () => {
         <Route path="/login" element={<Login />} /> {/* Route for Login */}
         <Route path="/detail" element={<Dettail />} /> {/* Route for Detail */}
         <Route path="/sell" element={<SellForm />} /> {/* Route for Sell */}
+        <Route path="/waste-coll" element={<WasteCollection />} /> 
+        <Route path="/waste-cate" element={<Wastecategories />} /> 
+        <Route path="/usercard" element={<UserCard />} />
       </Routes>
 
       <Footer /> {/* Footer is rendered here */}
@@ -31,3 +37,4 @@ const App = () => {
 };
 
 export default App;
+Wastecategories
