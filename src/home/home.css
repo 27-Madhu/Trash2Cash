@@ -382,7 +382,7 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
-  z-index: 1; /* Ensure it's above the video but below content */
+  z-index: 1;
 }
 .know-more {
   display: inline-block;

@@ -28,7 +28,7 @@ function Footer() {
                             <NavLink href="#" className={styles.footerLink}>Services</NavLink>
                         </Nav>
                     </Col>
-
+   {/* contact */}
                     <Col md={3} xs={12} className="text-center text-md-start">
                         <h5 className={styles.footerHeading}>Contact Us!</h5>
                         <p className={styles.footerContact}>

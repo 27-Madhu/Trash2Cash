@@ -37,7 +37,7 @@ const steps = [
 
 const Dettail = () => {
   return (
-   
+    //  step dettail
     <div className={styles.container}>
         <div className={styles.mainHeader}>
         <h1>Waste Collection</h1>

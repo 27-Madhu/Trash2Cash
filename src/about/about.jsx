@@ -15,6 +15,7 @@ const About = () => {
     { img: workImg, title: "How It Works", desc: "Users can collect recyclable waste, bring it to our centers, and earn rewards.", link: "/detail", btnText: "Learn More" },
     { img: timeImg, title: "Impact", desc: "We have recycled 1000+ tons of waste and helped 5000+ users earn rewards!", link: "#", btnText: "Impact" }
   ];
+      {/* About Start */}
 
   return (
     <div className={styles.body}>
