@@ -109,7 +109,7 @@ const About = () => {
           <SwiperSlide>
             <div className={styles.testimonialBox}>
               <p>"Their work is incredible. I'm extremely satisfied with their efforts!"</p>
-              <h4>- siya Smith</h4>
+              <h4>- Siya Smith</h4>
             </div>
           </SwiperSlide>
         </Swiper>

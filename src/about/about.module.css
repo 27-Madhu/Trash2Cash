@@ -199,19 +199,29 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .rowContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .textContent {
+        padding: 0;
+    }
+
+    .boxes {
+        width: 45%;
+    }
+}
+
 @media (max-width: 768px) {
     .aboutContent {
         flex-direction: column;
         align-items: center;
     }
 
-    .boxes, .rowContainer {
+    .boxes {
         width: 100%;
-    }
-
-    .rowContainer {
-        flex-direction: column;
-        text-align: center;
     }
 
     .teamMembers {
@@ -219,3 +229,31 @@
         align-items: center;
     }
 }
+
+@media (max-width: 480px) {
+    .topBanner {
+        height: 300px;
+    }
+
+    .bannerText h1 {
+        font-size: 36px;
+    }
+
+    .ctaBtn {
+        padding: 10px 20px;
+    }
+
+    .boxes {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .member {
+        width: 90%;
+    }
+
+    .testimonialBox {
+        max-width: 90%;
+    }
+}  
+
