@@ -1,4 +1,54 @@
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.navbarFixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures Navbar stays on top of other elements */
+   
+  }
+  
+/* Nav links styling */
+.navbar-nav .nav-link {
+    font-size: 20px;
+    color: black;
+   
+    transition: all 0.3s ease-in-out;
+}
 
+<<<<<<< HEAD
 .lng{
     margin-left: 20px;
+   
+        position: relative; /* Necessary for z-index to work */
+        z-index: 1; /* Navbar ko video ke upar dikhane ke liye */
+    }
+    
+=======
+/* Hover effect for all nav links */
+.navbar-nav .nav-link:hover {
+    color: orange !important;
 }
+
+/* Hover effect for dropdown */
+#navbarScrollingDropdown:hover .dropdown-toggle,
+#languageDropdown:hover .dropdown-toggle {
+    color: orange !important;
+}
+
+/* Dropdown items hover effect */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 165, 0, 0.2);
+    color: orange !important;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.btn-outline-success:hover {
+    background-color: orange;
+    color: white;
+}
+>>>>>>> bb57447919f1418304f6f6521e2261052f2f92cf
