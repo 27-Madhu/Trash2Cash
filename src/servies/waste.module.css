@@ -1,0 +1,66 @@
+body {
+    background-color: #e6ffe6; /* Light green shade */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .centerHeading {
+    margin-top: 2%;
+    background-color: #e6ffe6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Full width */
+    height: 300px;
+    text-align: center;
+    position: relative; /* Needed for absolute positioning */
+  }
+  
+  .leftImg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 170px;
+    height: 170px;
+  }
+  
+  .rightImg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 170px;
+    height: 170px;
+  }
+  
+  .westHead {
+    font-size: 46px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  .wasteSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px  50px 50px 50px;
+  }
+  
+  .wasteImage {
+    width: 45%;
+    min-height: 200px;
+    border-radius: 10px;
+  }
+  
+  .wasteDescription {
+    width: 50%;
+    text-align: justify;
+    font-size: 18px;
+  }
+  
+
+
+
+.Card ,Img {
+  height: 200px;
+
+}
