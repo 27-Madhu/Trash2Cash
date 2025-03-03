@@ -1,0 +1,112 @@
+.registrationContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.formSection {
+    background: linear-gradient(to right, #c8e6c9, #c8e6c9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(27, 94, 32, 0.2);
+    width: 520px; /* Increased width */
+    animation: slideDown 0.7s ease-out;
+}
+
+.registrationHeading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1b5e20;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.inputContainer {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 500;
+    color: #1b5e20;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.inputWrapper {
+    position: relative;
+}
+
+
+.formIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1b5e20;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    height: 36px;
+    padding: 5px 10px 5px 35px;
+    border: 2px solid #1b5e20;
+    border-radius: 5px;
+    outline: none;
+    color: #111211ef;
+    font-size: 0.9rem;
+}
+
+input::placeholder {
+    color: #1b5e20;
+    font-size: 0.85rem;
+}
+
+.registerBtn {
+    width: 100%;
+    background: linear-gradient(to right, #1b5e20, #27ae60);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.registerBtn:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.4);
+}
+
+.textLink {
+    color: #1b5e20;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.textLink:hover {
+    text-decoration: underline;
+}
+
+/* Slide-down animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

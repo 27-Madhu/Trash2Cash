@@ -1,60 +1,109 @@
-import "react";
+import { useState } from "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
-import "./login.css";
 import { FaEnvelope, FaLock } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import styles from "./login.module.css"; // Importing CSS Module
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let newErrors = {};
+    let isValid = true;
+
+    if (!email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+    if (!password) {
+      newErrors.password = "Password is required";
+      isValid = false;
+    } else if (!passwordRegex.test(password)) {
+      newErrors.password =
+        "Password must have at least 6 characters, including a letter, a number, and a special character";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log("Login submitted");
+
+    if (validateForm()) {
+      setErrors({});
+      console.log("Login successful");
+    }
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100">
+    <Container className={`d-flex justify-content-center align-items-center vh-100 ${styles.container}`}>
       <Row className="w-100">
         <Col md={6} lg={4} className="mx-auto">
-          <Card className="shadow">
+          <Card className={styles.card}>
             <Card.Body>
               <h3 className="text-center mb-4">Login</h3>
               <Form onSubmit={handleLogin}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <div className="form-group">
+                {/* Email Field */}
+                <Form.Group className="mb-3">
+                  <Form.Label className={styles.label}>Email address</Form.Label>
+                  <div className={styles.inputContainer}>
+                    <FaEnvelope className={styles.inputIcon} />
                     <Form.Control
                       type="email"
                       placeholder="Enter email"
-                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className={styles.input}
                     />
-                    <FaEnvelope className="form-icon" />
                   </div>
+                  {errors.email && <p className="text-danger">{errors.email}</p>}
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <div className="form-group">
+                {/* Password Field */}
+                <Form.Group className="mb-3">
+                  <Form.Label className={styles.label}>Password</Form.Label>
+                  <div className={styles.inputContainer}>
+                    <FaLock className={styles.inputIcon} />
                     <Form.Control
                       type="password"
                       placeholder="Enter password"
-                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className={styles.input}
                     />
-                    <FaLock className="form-icon" />
                   </div>
+                  {errors.password && <p className="text-danger">{errors.password}</p>}
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="w-100">
+                {/* Submit Button */}
+                <Button type="submit" className={`w-100 ${styles.button}`}>
                   Login
                 </Button>
               </Form>
+
+              {/* 🔹 Forgot Password Link Updated 🔹 */}
               <div className="text-center mt-3">
-                <a href="#forgot-password" className="text-decoration-none">
+                <Link to="/forgotpassword" className={styles.link}>
                   Forgot Password?
-                </a>
+                </Link>
               </div>
+
+              {/* Register Link */}
               <div className="text-center mt-2">
                 <span>Don't have an account? </span>
-                <a href="#register" className="text-decoration-none">
+                <Link to="/register" className={styles.link}>
                   Register
-                </a>
+                </Link>
               </div>
             </Card.Body>
           </Card>
@@ -65,6 +114,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-
-
-
