@@ -94,7 +94,7 @@ const RegistrationForm = () => {
     <Container fluid className={styles.registrationContainer}>
       <div className={styles.formSection}>
         <h2 className={styles.registrationHeading}>User Registration</h2>
-
+   {/* registrarion */}
         <Form onSubmit={handleSubmit}>
           <Row>
             <Col md={6}>
