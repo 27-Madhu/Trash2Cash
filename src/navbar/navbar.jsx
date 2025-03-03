@@ -1,8 +1,8 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import LogoImage from "../all_image/logo.png";
-import UserImage from "../all_image/user.jpg";
+// import LogoImage from "../all_image/logo.png";
+// import UserImage from "../all_image/user.jpg";
 import "./navbar.css";
 
 const Navigation = () => {
@@ -11,7 +11,7 @@ const Navigation = () => {
       <Container fluid>
         {/* ✅ Logo on the Left */}
         <Navbar.Brand className="align-items-center">
-          <img src={LogoImage} alt="logo" className="logo-img" style={{marginLeft:'30px'}} />
+          {/* <img src={LogoImage} alt="logo" className="logo-img" style={{marginLeft:'30px'}} /> */}
           <Nav.Link as={Link} to="/" className="brand-text">
             <span className="green">Trash</span>
             <span className="orange">2</span>
@@ -53,7 +53,7 @@ const Navigation = () => {
           {/* ✅ Right-Side Login & Language Dropdown */}
           <div className="d-flex align-items-center">
           <Nav.Link as={Link} to="/usercard" className="brand-text">
-            <img src={UserImage} alt="logo" className="logo-img me-5" style={{marginRight:'0px',borderRadius:'50%'}} />
+            {/* <img src={UserImage} alt="logo" className="logo-img me-5" style={{marginRight:'0px',borderRadius:'50%'}} /> */}
           </Nav.Link>
            
           <Navbar.Brand className="align-items-center">
