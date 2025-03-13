@@ -1,0 +1,50 @@
+/* Navbar Container */
+.nav {
+    width: 250px;
+    height: 100vh;
+    background-color: #222233;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Admin Image */
+  .adminImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect on image */
+  .adminImg:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Navbar Links */
+  .navlink {
+    color: white !important;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect on Links */
+  .navlink:hover {
+    background-color: orange !important;
+    color: black !important;
+    transform: translateX(5px);
+  }
+  
+  /* Active Link */
+  .nav-link.active {
+    background-color: orange !important;
+    color: black !important;
+  }
+  
