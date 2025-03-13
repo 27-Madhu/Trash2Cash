@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, NavDropdown, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoImage from "../all_image/logo.png";
 import UserImage from "../all_image/user.jpg";
-import "./navbar.css";
+import "./navbar.css"; // Make sure you include this
 
 const Navigation = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <Navbar expand="lg" className="navbarFixed fixed-top">
       <Container fluid>
         {/* ✅ Logo on the Left */}
         <Navbar.Brand className="align-items-center">
-          <img src={LogoImage} alt="logo" className="logo-img" style={{marginLeft:'30px'}} />
+          <img src={LogoImage} alt="logo" className="logo-img" style={{ marginLeft: "30px" }} />
           <Nav.Link as={Link} to="/" className="brand-text">
             <span className="green">Trash</span>
             <span className="orange">2</span>
@@ -37,9 +39,7 @@ const Navigation = () => {
                 Waste Categorization & Valuation
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="#action5">
-                Second-Hand Market
-              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="#action5">Second-Hand Market</NavDropdown.Item>
             </NavDropdown>
 
             <Nav.Link as={Link} to="/contact" className="nav-item">
@@ -50,22 +50,52 @@ const Navigation = () => {
             </Nav.Link>
           </Nav>
 
-          {/* ✅ Right-Side Login & Language Dropdown */}
+          {/* ✅ Right-Side Login & User Profile Dropdown */}
           <div className="d-flex align-items-center">
-          <Nav.Link as={Link} to="/usercard" className="brand-text">
-            <img src={UserImage} alt="logo" className="logo-img me-5" style={{marginRight:'0px',borderRadius:'50%'}} />
-          </Nav.Link>
-           
-          <Navbar.Brand className="align-items-center">
-            <NavDropdown title="Language" id="languageDropdown" style={{fontSize:'15px'}}>
-              <NavDropdown.Item as={Link} to="#hindi">Hindi</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#english">English</NavDropdown.Item>
-            </NavDropdown>
-            <Button as={Link} to="/login" className="login-btn" variant="outline-success">
-              Login
-            </Button>
-          </Navbar.Brand>
 
+          {/* Admin Plnel */}
+          <Link  className="me-5" to="/adminapp">Admin Panel</Link>
+           {/* Admin Plnel */}
+
+            <NavDropdown
+              title={
+                <img
+                  src={UserImage}
+                  alt="User"
+                  className="logo-img me-5"
+                  style={{
+                    marginRight: "0px",
+                    borderRadius: "50%",
+                    width: "40px",
+                    height: "40px",
+                    cursor: "pointer",
+                  }}
+                />
+              }
+              id="user-dropdown"
+              show={showDropdown}
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
+            >
+              <NavDropdown.Item as={Link} to="/usercard">Profile</NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/"
+              >
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
+
+            {/* Language Dropdown & Login Button */}
+            <Navbar.Brand className="align-items-center">
+              <NavDropdown title="Language" id="languageDropdown" style={{ fontSize: "15px" }}>
+                <NavDropdown.Item as={Link} to="#hindi">Hindi</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="#english">English</NavDropdown.Item>
+              </NavDropdown>
+              <Button as={Link} to="/login" className="login-btn" variant="outline-success">
+                Login
+              </Button>
+            </Navbar.Brand>
           </div>
         </Navbar.Collapse>
       </Container>

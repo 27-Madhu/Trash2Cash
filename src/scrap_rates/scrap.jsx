@@ -133,7 +133,19 @@ const Scrap = () => {
               </Card.Body>
             </Card>
           </Carousel.Item>
+          <Carousel.Item>
+            <Card className="text-center mx-auto" style={{ width: "90%", padding: "20px" }}>
+              <Card.Img variant="top" src={mixPlasticImage} style={{ width: "100px", height: "60px", margin: "0 auto", borderRadius: "50%" }} />
+              <Card.Body>
+                <Card.Title>Forth Slide</Card.Title>
+                <Card.Text>
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Carousel.Item>
         </Carousel>
+        
       </div>
     </div>
   );

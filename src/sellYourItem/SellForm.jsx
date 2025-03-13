@@ -344,7 +344,7 @@ const SellForm = () => {
 
                                 <div className="mb-3">
                                     <label className="form-label">Nearest Landmark (Optional)</label>
-                                    <input type="text" className="form-control" placeholder="E.g., Near XYZ Mall, Opposite ABC Park" />
+                                    <input type="text" className="form-control" placeholder="E.g., Near XYZ Mall, Opposite  any temple" />
                                 </div>
                                 <button type="button" className="btn btn-warning me-2" onClick={handlePrevious}>Previous</button>
                                 <div className="picup mt-3 ">
