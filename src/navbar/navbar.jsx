@@ -2,82 +2,100 @@ import React, { useState } from "react";
 import { Navbar, Nav, NavDropdown, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import LogoImage from "../all_image/logo.png";
-import "./navbar.css";
+import UserImage from "../all_image/user.jpg";
+import "./navbar.css"; // Make sure you include this
 
 const Navigation = () => {
-  const [dropdownShow, setDropdownShow] = useState(false);
-  const [langDropdownShow, setLangDropdownShow] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <Navbar expand="lg" className="fixed-top" style={{ background: "#c8e6c9" }}>
-  <Container fluid>
+    <Navbar expand="lg" className="navbarFixed fixed-top">
+      <Container fluid>
+        {/* ✅ Logo on the Left */}
+        <Navbar.Brand className="align-items-center">
+          <img src={LogoImage} alt="logo" className="logo-img" style={{ marginLeft: "30px" }} />
+          <Nav.Link as={Link} to="/" className="brand-text">
+            <span className="green">Trash</span>
+            <span className="orange">2</span>
+            <span className="green">Cash</span>
+          </Nav.Link>
+        </Navbar.Brand>
 
-        {/* Logo */}
-        <div className="logo me-5 d-flex" style={{ marginLeft: "60px" }}>
-          <Navbar.Brand>
-            <img
-              src={LogoImage}
-              alt="logo"
-              width="40"
-              height="40"
-              className="d-inline-block align-top"
-              style={{ marginLeft: "30px" }}
-            />
-            <Nav.Link as={Link} to="/" className="me-4" style={{ fontWeight: "bold" }}>
-              <span style={{ color: "green" }}>Trash</span>
-              <span style={{ color: "orange" }}>2</span>
-              <span style={{ color: "green" }}>Cash</span>
-            </Nav.Link>
-          </Navbar.Brand>
-        </div>
-
+        {/* Toggle Button for Mobile View */}
         <Navbar.Toggle aria-controls="navbarScroll" />
+
         <Navbar.Collapse id="navbarScroll">
-          <Nav className="mx-auto my-2 my-lg-0 justify-content-center" style={{ maxHeight: "80px" }} navbarScroll>
-            <Nav.Link as={Link} to="/scrap" className="me-4">
+          {/* ✅ Centered Navigation Links */}
+          <Nav className="nav-links mx-auto">
+            <Nav.Link as={Link} to="/scrap" className="nav-item">
               Scrap Rates
             </Nav.Link>
 
-            {/* Services Dropdown with Hover Effect */}
-            <NavDropdown
-              title="Services"
-              className="me-4"
-              id="navbarScrollingDropdown"
-              show={dropdownShow}
-              onMouseEnter={() => setDropdownShow(true)}
-              onMouseLeave={() => setDropdownShow(false)}
-            >
-              <NavDropdown.Item as={Link} to="#action3">Waste Collection Services</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#action4">Waste Categorization & Valuation</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/secondhandmarket">Second-Hand Market</NavDropdown.Item>
+            <NavDropdown title="Services" className="nav-item">
+              <NavDropdown.Item as={Link} to="/waste-coll">
+                Waste Collection Services
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/waste-cate">
+                Waste Categorization & Valuation
+              </NavDropdown.Item>
+             
+              
             </NavDropdown>
 
-            <Nav.Link as={Link} to="/contact" className="me-4">
+            <Nav.Link as={Link} to="/contact" className="nav-item">
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} to="/about" className="me-4">
+            <Nav.Link as={Link} to="/about" className="nav-item">
               About
             </Nav.Link>
           </Nav>
 
-          {/* Right Section - Login and Language Dropdown */}
-          <div className="d-flex">
-            <Button as={Link} to="/login" className="me-4" variant="outline-success">
-              Login
-            </Button>
+          {/* ✅ Right-Side Login & User Profile Dropdown */}
+          <div className="d-flex align-items-center">
 
-            {/* Language Dropdown with Hover Effect */}
+          {/* Admin Plnel */}
+          <Link  className="me-5" to="/adminapp">Admin Panel</Link>
+           {/* Admin Plnel */}
+
             <NavDropdown
-              title="Language"
-              id="languageDropdown"
-              show={langDropdownShow}
-              onMouseEnter={() => setLangDropdownShow(true)}
-              onMouseLeave={() => setLangDropdownShow(false)}
+              title={
+                <img
+                  src={UserImage}
+                  alt="User"
+                  className="logo-img me-5"
+                  style={{
+                    marginRight: "0px",
+                    borderRadius: "50%",
+                    width: "40px",
+                    height: "40px",
+                    cursor: "pointer",
+                  }}
+                />
+              }
+              id="user-dropdown"
+              show={showDropdown}
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
             >
-              <NavDropdown.Item as={Link} to="#hindi">Hindi</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#english">English</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/usercard">Profile</NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/"
+              >
+                Logout
+              </NavDropdown.Item>
             </NavDropdown>
+
+            {/* Language Dropdown & Login Button */}
+            <Navbar.Brand className="align-items-center">
+              <NavDropdown title="Language" id="languageDropdown" style={{ fontSize: "15px" }}>
+                <NavDropdown.Item as={Link} to="#hindi">Hindi</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="#english">English</NavDropdown.Item>
+              </NavDropdown>
+              <Button as={Link} to="/login" className="login-btn" variant="outline-success">
+                Login
+              </Button>
+            </Navbar.Brand>
           </div>
         </Navbar.Collapse>
       </Container>

@@ -1,30 +1,39 @@
-/* contact.module.css */
-.head {
-  color: green;
+.contactContainer {
+  margin-top: 8%;
+}
+.head{
+  
+    color: green;
+    text-align: center;
+    margin-top: 30px;
   
 }
+/* Contact Section */
 
-.container {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 7%;
-  gap: 30px;
-}
 
+/* Image Styling */
 .imageContainer img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
+/* Form Styling */
+.formContainer {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
 .card {
-  flex: 1;
-  transition: transform 0.3s ease-in-out;
+  width: 90%;
   border: none;
   background-color: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  padding: 20px;
- margin-left: 50px;
+  padding: 50px;
+  margin-left:4%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -32,6 +41,7 @@
   box-shadow: 0px 4px 15px rgba(0, 128, 0, 0.3);
 }
 
+/* Input Fields */
 .inputField {
   border: 1px solid green !important;
   padding: 10px;
@@ -40,22 +50,50 @@
   box-sizing: border-box;
 }
 
+/* Button Hover Effect */
 .btn:hover {
   background-color: green;
   border: none;
 }
 
-.verticalDivider {
-  border: none;
-  border-left: 2px solid #000;
-  height: 100%;
-  margin: 0 20px;
-}
-
+/* Address Section */
 .addressCard {
   flex: 1;
   border-radius: 8px;
   padding: 20px;
   background-color: white;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 992px) { /* Large Screens */
+  .contactContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .imageContainer {
+    text-align: left;
+  }
+
+  .formContainer {
+    text-align: left;
+  }
+}
+
+@media (max-width: 991px) { /* Small & Medium Screens */
+  .contactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    text-align: center;
+  }
+
+  .formContainer {
+    text-align: center;
+  }
 }
