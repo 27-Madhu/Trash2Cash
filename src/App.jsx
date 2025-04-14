@@ -9,22 +9,28 @@ import Scrap from "./scrap_rates/scrap.jsx";
 import Contact from "./contact/contact.jsx"; 
 import About from "./about/about.jsx"; 
 import Login from "./login/login.jsx"; 
+import ForgotPassword from "./forgotpassword/forgotpassword.jsx"; 
+import { AuthProvider } from "./context/AuthContext"; 
+
+import ResetPassword from "./forgotpassword/ResetPassword";
+import RegistrationForm from "./register/register.jsx"; 
 import Dettail from "./dettail/dettail.jsx"; 
 import SellForm from "./sellYourItem/SellForm.jsx"; 
 import WasteCollection from './servies/waste-collation.jsx';
 import Wastecategories from './servies/waste-categories.jsx';
 import UserCard from './User_profile/user.jsx';
-
 // ✅ Import Admin Page
-// import AdminApp from "./Admin/AdminApp.jsx";
+import AdminApp from "./Admin/AdminApp.jsx";
 
 const App = () => {
-  // const location = useLocation();
-  // const isAdminPage = location.pathname.startsWith("/adminapp");
+  const location = useLocation();
+  const isAdminPage = location.pathname.startsWith("/adminapp");
 
   return (
+    <AuthProvider>
     <div>
-      { <Navigation />} 
+      {!isAdminPage && <Navigation />} 
+     
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -37,13 +43,20 @@ const App = () => {
         <Route path="/waste-coll" element={<WasteCollection />} />
         <Route path="/waste-cate" element={<Wastecategories />} />
         <Route path="/usercard" element={<UserCard />} />
-
+        <Route path="/register" element={<RegistrationForm/>}/>
+        <Route path="/forgotpassword" element={< ForgotPassword/>}/>
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         {/* ✅ Fix: Admin Nested Routes */}
-        {/* <Route path="/adminapp/*" element={<AdminApp />} /> */}
+        <Route path="/adminapp/*" element={<AdminApp />} />
+        
       </Routes>
+      
+      
 
-      {<Footer />} 
+      {!isAdminPage && <Footer />}
+      
     </div>
+    </AuthProvider>
   );
 };
 
