@@ -1,47 +1,47 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col, Card } from "react-bootstrap";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import styles from "./login.module.css"; // Importing CSS Module
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./login.module.css";
+import axios from "axios";
+import { AuthContext } from "../context/AuthContext";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
-  const validateForm = () => {
-    let newErrors = {};
-    let isValid = true;
-
-    if (!email) {
-      newErrors.email = "Email is required";
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "Invalid email format";
-      isValid = false;
-    }
-
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-
-    if (!password) {
-      newErrors.password = "Password is required";
-      isValid = false;
-    } else if (!passwordRegex.test(password)) {
-      newErrors.password =
-        "Password must have at least 6 characters, including a letter, a number, and a special character";
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
 
-    if (validateForm()) {
-      setErrors({});
-      console.log("Login successful");
+    const adminEmail = "madhu@gmail.com";
+    const adminPassword = "madhu123";
+
+    if (email === adminEmail && password === adminPassword) {
+      navigate("/adminapp/*");
+    } else {
+      try {
+        const result = await axios.post("http://localhost:3001/login", { email, password });
+
+        if (result.data.success) {
+          const { token, user } = result.data;
+
+          // ✅ Store token in localStorage
+          localStorage.setItem("token", token);
+
+          // ✅ Update AuthContext with user data
+          login(user);
+
+          // ✅ Redirect to user home page
+          navigate("/");
+        } else {
+          alert("❌ Login failed! " + (result.data.message || ""));
+        }
+      } catch (error) {
+        console.error("❌ Login Error:", error);
+        alert("❌ Login Failed! Please check your credentials.");
+      }
     }
   };
 
@@ -53,7 +53,6 @@ const LoginPage = () => {
             <Card.Body>
               <h3 className="text-center mb-4">Login</h3>
               <Form onSubmit={handleLogin}>
-                {/* Email Field */}
                 <Form.Group className="mb-3">
                   <Form.Label className={styles.label}>Email address</Form.Label>
                   <div className={styles.inputContainer}>
@@ -64,12 +63,11 @@ const LoginPage = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className={styles.input}
+                      required
                     />
                   </div>
-                  {errors.email && <p className="text-danger">{errors.email}</p>}
                 </Form.Group>
 
-                {/* Password Field */}
                 <Form.Group className="mb-3">
                   <Form.Label className={styles.label}>Password</Form.Label>
                   <div className={styles.inputContainer}>
@@ -80,25 +78,22 @@ const LoginPage = () => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className={styles.input}
+                      required
                     />
                   </div>
-                  {errors.password && <p className="text-danger">{errors.password}</p>}
                 </Form.Group>
 
-                {/* Submit Button */}
                 <Button type="submit" className={`w-100 ${styles.button}`}>
                   Login
                 </Button>
               </Form>
 
-              {/* 🔹 Forgot Password Link Updated 🔹 */}
               <div className="text-center mt-3">
                 <Link to="/forgotpassword" className={styles.link}>
                   Forgot Password?
                 </Link>
               </div>
 
-              {/* Register Link */}
               <div className="text-center mt-2">
                 <span>Don't have an account? </span>
                 <Link to="/register" className={styles.link}>
