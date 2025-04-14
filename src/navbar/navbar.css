@@ -33,24 +33,17 @@
     color: orange;
 }
 
-/* ✅ Navbar Links */
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.nav-links .nav-item {
-    font-size: 18px;
+.nav-links .nav-link {
+    font-size: 18px !important;
     color: black !important;
-    margin: 0 10px;
-    transition: all 0.3s ease-in-out;
+    margin: 0 10px !important;
+    transition: all 0.3s ease-in-out !important;
 }
 
-.nav-links .nav-item:hover {
+.nav-links .nav-link:hover {
     color: orange !important;
 }
+
 
 /* ✅ Right-Side Buttons */
 .login-btn { 

@@ -1,193 +1,120 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Row, Col, Table, Form, Button, Modal } from 'react-bootstrap';
-import UserImage from '../all_image/bottel.jpg';
+import React, { useEffect, useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
+import axios from "axios";
+import img from "../all_image/user.jpg"; // User avatar image
+import { useNavigate } from "react-router-dom";
 
-const UserCard = ({ scrapData }) => {
-  const [paymentStatus, setPaymentStatus] = useState(scrapData.map(item => item.status));
-  const [showFeedbackForm, setShowFeedbackForm] = useState(false);
-  const [feedback, setFeedback] = useState("");
-  const [bankDetails, setBankDetails] = useState({ accountNumber: '', ifsc: '', upiId: '' });
+const UserProfile = () => {
+  const { user } = useContext(AuthContext);
+  const [sales, setSales] = useState([]);
+  const [loading, setLoading] = useState(true); // For loading state
+  const [error, setError] = useState(null); // For error handling
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (paymentStatus.includes("Payment Completed")) {
-      setShowFeedbackForm(true);
+    if (!user) {
+      navigate("/login");
+      return;
     }
-  }, [paymentStatus]);
 
-  const handleBankDetailsChange = (e) => {
-    setBankDetails({ ...bankDetails, [e.target.name]: e.target.value });
-  };
+    const fetchSales = async () => {
+      try {
+        const res = await axios.get("http://localhost:3001/api/my-orders", {
+          headers: {
+            Authorization: `Bearer ${user.token}`, // 👈 Send token
+          },
+        });
+        setSales(res.data);
+      } catch (error) {
+        console.error("Error fetching sales data:", error);
+        setError("Failed to fetch sales data. Please try again later.");
+      } finally {
+        setLoading(false); // Stop loading once the request finishes
+      }
+    };
 
-  const handlePaymentComplete = (index) => {
-    const updatedStatus = [...paymentStatus];
-    updatedStatus[index] = 'Payment Completed';
-    setPaymentStatus(updatedStatus);
-  };
-
-  const handleFeedbackSubmit = () => {
-    alert("Feedback Submitted Successfully!");
-    setShowFeedbackForm(false);
-  };
+    fetchSales();
+  }, [user, navigate]);
 
   return (
-    <div className="container" style={{ marginTop: '3%' }}>
-      <Card className="my-3">
-        <Row className="g-0">
-          <Col md={3} className="text-center">
-            <Card.Img 
-              src={UserImage} 
-              alt="User" 
-              className="img-fluid rounded-circle mt-4"
-              style={{ width: '100px', height: '100px' }} 
+    <div className="container mb-5" style={{ marginTop: "120px" }}>
+      <div className="card p-4 shadow-sm">
+        <div className="d-flex">
+          <div className="me-4 text-center">
+            <img
+              src={img}
+              alt="User Avatar"
+              className="rounded-circle mb-3"
+              style={{ width: "100px", height: "100px", objectFit: "cover" }}
             />
-            <div className="mt-3">
-              <h4>Madhuri Kumari</h4>  
-              <p>mkuamri345@gmail.com</p>   
-              <a href="#" className="btn btn-success mb-5">LogOut</a>
-            </div>
-          </Col>
-          <Col md={9}>
-            <Card.Body>
-              <h3 className="text-center">📜 Scrap Sales History</h3>
-              <Table striped bordered hover responsive>
+            <h4 className="mb-2">Welcome</h4>
+            <p><strong>Email:</strong> {user?.email}</p>
+            <button
+              className="btn btn-danger mt-2"
+              onClick={() => navigate("/login")}
+            >
+              Logout
+            </button>
+          </div>
+
+          <div className="flex-grow-1">
+            <h4 className="mt-3">📦 Your Scrap Sale History</h4>
+            
+            {loading ? (
+              <p>Loading your sales history...</p>
+            ) : error ? (
+              <p className="text-danger">{error}</p>
+            ) : sales.length > 0 ? (
+              <table className="table table-striped mt-3">
                 <thead>
                   <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Categories</th>
+                    <th>Subcategories & Quantity</th>
                     <th>Image</th>
-                    <th>Item Name</th>
-                    <th>Category</th>
-                    <th>Weight (KG)</th>
-                    <th>Total Earned</th>
-                    <th>Status</th>
-                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {scrapData.map((item, index) => (
+                  {sales.map((item, index) => (
                     <tr key={index}>
-                      <td><img src={item.image} alt={item.name} width="50" /></td>
-                      <td>{item.name}</td>
-                      <td>{item.category}</td>
-                      <td>{item.weight} KG</td>
-                      <td>₹{item.totalAmount}</td>
+                      <td>{new Date(item.createdAt).toLocaleDateString()}</td>
+                      <td>{item.itemName}</td>
                       <td>
-                        <span className={`badge ${paymentStatus[index] === 'Payment Completed' ? 'bg-success' : 'bg-warning'}`}>
-                          {paymentStatus[index]}
-                        </span>
+                        {item.categories.map((cat, i) => (
+                          <div key={i}>{cat.name}</div>
+                        ))}
                       </td>
                       <td>
-                        {paymentStatus[index] !== 'Payment Completed' && (
-                          <Button variant="success" size="sm" onClick={() => handlePaymentComplete(index)}>
-                            Mark as Paid
-                          </Button>
+                        {item.categories.map((cat, i) =>
+                          cat.subcategories.map((sub, j) => (
+                            <div key={j}>
+                              {sub.name} - {sub.quantity} kg
+                            </div>
+                          ))
+                        )}
+                      </td>
+                      <td>
+                        {item.itemImage ? (
+                          <img
+                            src={`http://localhost:3001/uploads/${item.itemImage}`}
+                            alt="Scrap"
+                            style={{ width: "60px", height: "60px", objectFit: "cover" }}
+                          />
+                        ) : (
+                          "No Image"
                         )}
                       </td>
                     </tr>
                   ))}
                 </tbody>
-              </Table>
-            </Card.Body>
-          </Col>
-        </Row>
-      </Card>
-
-      {/* Bank Details Form */}
-      <Card className="p-4 mt-3 mb-5">
-        <h4>💳 Payment Details</h4>
-        <Form>
-          <Row className="mb-3">
-            <Col md={4}>
-              <Form.Group>
-                <Form.Label>Bank Account Number</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="accountNumber"
-                  value={bankDetails.accountNumber}
-                  onChange={handleBankDetailsChange}
-                  placeholder="Enter Account Number"
-                />
-              </Form.Group>
-            </Col>
-            <Col md={4}>
-              <Form.Group>
-                <Form.Label>IFSC Code</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="ifsc"
-                  value={bankDetails.ifsc}
-                  onChange={handleBankDetailsChange}
-                  placeholder="Enter IFSC Code"
-                />
-              </Form.Group>
-            </Col>
-            <Col md={4}>
-              <Form.Group>
-                <Form.Label>UPI ID</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="upiId"
-                  value={bankDetails.upiId}
-                  onChange={handleBankDetailsChange}
-                  placeholder="Enter UPI ID"
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          <div className="d-flex justify-content-center">
-            <Button variant="success">Save Payment Details</Button>
+              </table>
+            ) : (
+              <p>No scrap sales found yet.</p>
+            )}
           </div>
-        </Form>
-      </Card>
-
-      {/* Feedback Modal */}
-      <Modal show={showFeedbackForm} onHide={() => setShowFeedbackForm(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Give Your Feedback</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>How was your experience?</Form.Label>
-              <Form.Control 
-                as="textarea" 
-                rows={3} 
-                value={feedback} 
-                onChange={(e) => setFeedback(e.target.value)} 
-                placeholder="Write your feedback..."
-              />
-            </Form.Group>
-            <Button variant="primary" onClick={handleFeedbackSubmit}>Submit Feedback</Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </div>
-  );
-};
-
-// Dummy Scrap Data
-const dummyScrapData = [
-  {
-    image: 'https://example.com/scrap-metal.jpg',
-    name: 'Old Papers, Glass',
-    category: 'Paper Glass',
-    weight: 5,
-    totalAmount: 500,
-    status: 'Pending',
-  },
-  {
-    image: 'https://example.com/scrap-plastic.jpg',
-    name: 'Plastic Bottles',
-    category: 'Plastic',
-    weight: 10,
-    totalAmount: 1000,
-    status: 'Pending',
-  },
-];
-
-const UserProfile = () => {
-  return (
-    <div className="container mt-4">
-      <h1 style={{ marginTop: '8%', textAlign: 'center' }}>User Profile</h1>
-      <UserCard scrapData={dummyScrapData} />
+        </div>
+      </div>
     </div>
   );
 };
