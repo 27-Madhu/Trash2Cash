@@ -1,11 +1,38 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import styles from './contact.module.css'; // Import CSS Module
 import contactImg from '../all_image/contact.jpg'; // Import your image
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import axios from 'axios';  // Import axios for API calls
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    number: "",
+    message: "",
+  });
+
+  // Handle input changes
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:3001/contact', formData); 
+      alert("Your message has been sent successfully!");
+      setFormData({ name: "", email: "", number: "", message: "" });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send the message. Please try again.");
+    }
+  };
+  
+
   return (
     <div className="container">
       {/* Contact Us Header */}
@@ -24,27 +51,59 @@ const Contact = () => {
         {/* Contact Form */}
         <div className={`col-lg-7 col-md-12 ${styles.formContainer}`}>
           <div className={`card ${styles.card}`}>
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <h1 className={`text-center ${styles.head}`}>𝓒𝓞𝓝𝓣𝓐𝓒𝓣 𝓤𝓢</h1>
 
               <Form.Group className="mb-3" controlId="Name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter Your Name" required className={styles.inputField} />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  name="name"
+                  required
+                  className={styles.inputField}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="Email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter Your Email" required className={styles.inputField} />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  name="email"
+                  required
+                  className={styles.inputField}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="ContactNumber">
                 <Form.Label>Contact Number</Form.Label>
-                <Form.Control type="number" placeholder="Contact Number" required className={styles.inputField} />
+                <Form.Control
+                  type="number"
+                  placeholder="Contact Number"
+                  value={formData.number}
+                  onChange={handleChange}
+                  name="number"
+                  required
+                  className={styles.inputField}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="Message">
                 <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={3} required className={styles.inputField} />
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  value={formData.message}
+                  onChange={handleChange}
+                  name="message"
+                  required
+                  className={styles.inputField}
+                />
               </Form.Group>
 
               <Button type="submit" className="btn-success w-100">
